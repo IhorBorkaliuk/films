@@ -1,0 +1,389 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+ul,
+ol {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+// ______________________________________________
+body.show-modal .backdrop {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: initial;
+}
+
+body.show-modal .modal {
+    transform: scale(0);
+}
+
+.backdrop {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 15px;
+
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 999;
+
+    overflow: auto;
+    pointer-events: none;
+    opacity: 0;
+    visibility: hidden;
+    // transition: opacity 200ms ease-in-out, visibility 200ms ease-in-out;
+    transition: opacity 1000ms cubic-bezier(0.4, 0, 0.2, 1), visibility 1000ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.no-scroll {
+    overflow: hidden;
+}
+
+.modal-film {
+    width: 100%;
+    // min-height: 558px;
+    // position: fixed;
+    padding: 48px 20px 40px 20px;
+    margin: auto;
+
+    background-color: #fff;
+    box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2),
+        0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
+    border-radius: 5px;
+
+    transition: transform 1000ms cubic-bezier(0.4, 0, 0.2, 1);
+    transform: scale(1);
+}
+
+@media screen and (min-width: 320px) {
+    .modal-film {
+        width: 280px;
+    }
+}
+
+
+
+@media screen and (min-width: 768px) {
+    .modal-film {
+        width: 704px;
+        // height: 90vh;
+
+        padding: 40px 36px 40px 36px;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    .modal-film {
+        width: 806px;
+        height: 558px;
+
+        padding: 40px 12px 40px 12px;
+    }
+}
+
+/* ! кнопка X (close-modal) */
+.modal-close {
+    position: absolute;
+    
+    top: 8px;
+    right: 8px;
+    width: 35px;
+    height: 35px;
+
+    cursor: pointer;
+}
+
+.modal-close:hover, .modal-close:focus {
+    width: 35px;
+    height: 35px;
+    border-radius: 50px;
+    background-color: #D3D3D3;    
+}
+
+.modal__btn-x {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    stroke: #000;
+}
+
+.modal-img {
+    margin: 0 auto;
+    border-radius: 5px;
+    max-width: 240px;
+    height: 357px;
+}
+
+/* ! весь контейнер модалки */
+@media screen and (min-width: 768px) {
+    .modal-markup1 {
+        display: flex;
+        // align-items: flex-start;
+        // justify-content: flex-start;
+    }
+
+    .modal-сontent {
+        margin-left: 68px;
+    }
+
+    .modal-img {
+        max-width: 264px;
+        height: 373px;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    .modal-сontent {
+        margin-left: 16px;
+    }
+
+    .modal-img {
+        max-width: 375px;
+        height: 478px;
+    }
+}
+
+.modal-title-film {
+    margin-bottom: 20px;
+        
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 1.15;
+}
+
+@media screen and (max-width: 767px) {
+    .modal-title-film {
+        margin-top: 20px;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    .modal-title-film {
+        font-size: 30px;
+        line-height: 1.17;
+    }
+}
+
+.modal-info {
+    margin-bottom: 20px;
+    border-spacing: 0;
+    
+}
+
+.modal-key {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.33;
+    color: #8C8C8C;
+    padding: 4px 40px 4px 0;
+}
+
+.modal-parametr {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.17;
+    padding: 4px 40px 4px 0;
+}
+
+.modal-parametr-vote {
+    color: #fff;
+    padding: 1px 9px;
+    width: 36px;
+    height: 16px;
+    background-color: #FF6B01;
+    border-radius: 5px;
+}
+
+.modal-about-film {
+    margin-bottom: 20px;
+}
+
+.modal-about-title {
+    margin-bottom: 8px;
+
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.33;
+}
+
+.modal-about-text {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.67;
+}
+
+/* ! кнопки ADD TO WATCHED и ADD TO QUEUE (modal-library) */
+.modal-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media screen and (min-width: 768px) {
+    .modal-button {
+        justify-content: flex-start;
+    }
+}
+
+.modal-button-watched,
+.modal-button-queue {
+    display: block;
+    width: 110px;
+    height: 44px;
+
+    border-radius: 5px;
+
+    align-items: center;
+    text-align: center;
+    text-transform: uppercase;
+
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.33;
+
+    cursor: pointer;
+}
+
+.modal-button-watched {
+    margin-right: 20px;
+    color: #FFFFFF;
+    background-color: #FF6B01;
+    border: none;
+
+    // &:hover,
+    // &:focus {
+    //     background-color: #ff0000;
+    // }
+}
+
+.modal-button-queue {
+    color: #000;
+    background-color: transparent;
+    border: 1px solid #000;
+
+    // &:hover,
+    // &:focus {
+    //     background-color: #ff0000;
+    // }
+}
+
+@media screen and (min-width: 768px) {
+    .modal-button-watched,
+    .modal-button-queue {
+        width: 125px;
+        height: 44px;
+    }
+
+    .modal-button-watched:not(:last-child) {
+        margin-right: 15px;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    .modal-button-watched,
+    .modal-button-queue {
+        width: 136px;
+        height: 44px;
+    }
+}
+
+
+
+.modal-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+@media screen and (min-width: 768px) {
+    .modal-button {
+        justify-content: flex-start;
+    }
+}
+.modal-button-add-watched,
+.modal-button-add-queue,
+.modal-button-delete {
+    display: block;
+    width: 110px;
+    height: 44px;
+    border-radius: 5px;
+    align-items: center;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.33;
+    cursor: pointer;
+}
+.modal-button-add-watched {
+    margin-right: 20px;
+    color: #FFFFFF;
+    background-color: #FF6B01;
+    border: none;
+    &:hover,
+    &:focus {
+        background-color: #FF964B;
+    }
+}
+.modal-button-add-queue {
+    color: #000;
+    background-color: transparent;
+    border: 1px solid #000;
+    &:hover,
+    &:focus {
+        background-color: #DDDDDD;
+    }
+}
+@media screen and (min-width: 768px) {
+    .modal-button-add-watched,
+    .modal-button-add-queue,
+    .modal-button-delete {
+        width: 125px;
+        height: 44px;
+    }
+    .modal-button-add-watched {
+        margin-right: 15px;
+    }
+}
+@media screen and (min-width: 1280px) {
+    .modal-button-add-watched,
+    .modal-button-add-queue,
+    .modal-button-delete {
+        width: 136px;
+        height: 44px;
+    }
+}
+.modal-button-delete {
+    background-color: #DA0000;
+    margin-right: 20px;
+    &:hover,
+    &:focus {
+        background-color: #FFAAAA;
+    }
+}
+@media screen and (min-width: 768px) {
+    .modal-button-delete {
+        margin-right: 15px;
+    }
+}
